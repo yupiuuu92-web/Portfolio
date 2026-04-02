@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Библиотека PDF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        
+        :root { --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            transition: var(--transition);
+            background-color: #f9fafb;
+            color: #000000;
+        }
+
+        /* Dark Mode */
+        .dark-mode { background-color: #0a0a0a !important; color: #ffffff !important; }
+        .dark-mode .pdf-card { background-color: #111111 !important; border-color: #222 !important; }
+        .dark-mode h1, .dark-mode h2, .dark-mode p, .dark-mode span { color: #f3f4f6 !important; }
+        .dark-mode #sidebar .bg-white { background-color: #111111 !important; }
+
+        /* Glass Buttons */
+        .glass-btn {
+            background: rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        .dark-mode .glass-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .pdf-card { 
+            background: white; 
+            border-radius: 2.5rem; 
+            border: 1px solid #eee; 
+            transition: var(--transition);
+        }
+        .pdf-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); }
+
+        .sidebar-transition { transition: transform 0.6s cubic-bezier(0.7, 0, 0.3, 1); }
+        
+        #scrollProgress {
+            position: fixed; top: 0; left: 0; height: 3px; background: #000;
+            width: 0%; z-index: 1000;
+        }
+        .dark-mode #scrollProgress { background: #fff; }
+    </style>
+</head>
+<body>
+
+    <div id="scrollProgress"></div>
+
+    <div class="fixed top-6 right-6 z-[100] flex flex-col gap-3">
+        <button id="menuBtn" class="glass-btn w-12 h-12 rounded-xl flex items-center justify-center hover:scale-110 active:scale-95">
+            <i id="menuIcon" class="fas fa-bars text-xl"></i>
+        </button>
+        <button id="themeBtn" class="glass-btn w-12 h-12 rounded-xl flex items-center justify-center hover:scale-110 active:scale-95">
+            <i id="themeIcon" class="fas fa-moon text-lg"></i>
+        </button>
+    </div>
+
+    <div id="sidebar" class="fixed inset-0 z-[90] translate-x-full sidebar-transition">
+        <div id="overlay" class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 transition-opacity duration-500"></div>
+        <div class="absolute right-0 top-0 h-full w-full sm:w-[350px] bg-white shadow-2xl p-10 flex flex-col">
+            <nav class="space-y-6 mt-20 flex-grow">
+                <a href="index.html" class="nav-link block text-2xl font-bold italic tracking-tighter text-gray-400 hover:text-black dark:hover:text-white transition-all">Башкы бет</a>
+                <a href="library.html" class="nav-link block text-2xl font-bold italic tracking-tighter border-b-2 border-current pb-2">Библиотека</a>
+            </nav>
+            <p class="text-[10px] uppercase font-bold tracking-[0.3em] opacity-40 py-6 border-t border-gray-100">Методикалык куржун</p>
+        </div>
+    </div>
+
+    <main class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-20 reveal">
+                <h1 class="text-5xl md:text-7xl font-bold italic tracking-tighter uppercase">Документтер</h1>
+                <p class="mt-4 text-gray-500 font-medium">test v 1</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <div class="pdf-card p-10 reveal group">
+                    <div class="flex justify-between items-start mb-12">
+                        <div class="w-16 h-16 bg-gray-50 dark:bg-white/5 rounded-2xl flex items-center justify-center transition-colors">
+                            <i class="fas fa-file-pdf text-2xl opacity-20"></i>
+                        </div>
+                        <span class="text-[10px] font-bold opacity-30 tracking-widest uppercase">№ 01</span>
+                    </div>
+                    <h3 class="text-2xl font-bold italic mb-2">Сабактын планы</h3>
+                    <p class="text-sm opacity-50 mb-8 leading-relaxed">test test test.</p>
+                    <button class="w-full py-4 rounded-2xl border border-current font-bold uppercase text-[10px] tracking-widest hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
+                        Ачуу (Күтүлүүдө)
+                    </button>
+                </div>
+
+                <div class="pdf-card p-10 reveal border-dashed border-2 opacity-60 flex flex-col items-center justify-center text-center group" style="transition-delay: 0.1s;">
+                    <div class="w-16 h-16 mb-6 rounded-full border border-current border-dashed flex items-center justify-center group-hover:rotate-90 transition-transform duration-500">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <p class="font-bold italic uppercase text-xs tracking-widest">Жаңы файл кошулат</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Код скролла
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        };
+
+        // ТЕМА (LocalStorage)
+        const themeBtn = document.getElementById('themeBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                body.classList.add('dark-mode');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                body.classList.remove('dark-mode');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        applyTheme(localStorage.getItem('portfolio-theme') || 'light');
+
+        themeBtn.addEventListener('click', () => {
+            const isDark = body.classList.contains('dark-mode');
+            const newTheme = isDark ? 'light' : 'dark';
+            localStorage.setItem('portfolio-theme', newTheme);
+            applyTheme(newTheme);
+        });
+
+        // МЕНЮ
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        
+        function toggleMenu() {
+            sidebar.classList.toggle('translate-x-full');
+            overlay.classList.toggle('opacity-100');
+            overlay.classList.toggle('opacity-0');
+            document.getElementById('menuIcon').classList.toggle('fa-bars');
+            document.getElementById('menuIcon').classList.toggle('fa-times');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.8s ease-out";
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
