@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Платформалар | Аты / Фамилия</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        :root { --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        body { font-family: 'Montserrat', sans-serif; transition: background 0.4s ease, color 0.4s ease; background-color: #ffffff; color: #1a1a1a; }
+        .dark-mode { background-color: #050505 !important; color: #ffffff !important; }
+        .top-badge { background: rgba(0, 0, 0, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 999px; padding: 10px 24px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+        .dark-mode .top-badge { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff !important; }
+        .glass-btn { background: rgba(0, 0, 0, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.1); transition: var(--transition); }
+        .dark-mode .glass-btn { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff !important; }
+        .dark-mode h1, .dark-mode h3, .dark-mode p, .dark-mode i, .dark-mode span { color: #ffffff !important; }
+        .platform-card { background: #ffffff; border-radius: 2.5rem; border: 1px solid #f0f0f0; transition: var(--transition); }
+        .dark-mode .platform-card { background: #121212 !important; border-color: #252525 !important; }
+        .platform-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px -12px rgba(0,0,0,0.1); }
+        .link-btn { width: 100%; padding: 12px; border-radius: 1rem; border: 1px solid rgba(139, 92, 246, 0.2); text-align: center; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: #8b5cf6; transition: all 0.3s; }
+        .platform-card:hover .link-btn { background-color: #8b5cf6; color: white; border-color: #8b5cf6; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased">
+    <nav class="fixed top-0 left-0 w-full p-6 z-[100] flex justify-between items-center pointer-events-none">
+        <a href="index.html" class="glass-btn w-12 h-12 rounded-2xl flex items-center justify-center pointer-events-auto hover:scale-110 active:scale-95 transition-all">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <div class="top-badge pointer-events-auto">Санарип Портфолио | <span>Платформалар</span></div>
+        <button id="themeBtn" class="glass-btn w-12 h-12 rounded-2xl flex items-center justify-center pointer-events-auto hover:scale-110 active:scale-95">
+            <i id="themeIcon" class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <main class="pt-36 pb-20 px-6 max-w-6xl mx-auto">
+        <header class="mb-24 reveal text-center">
+            <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-purple-500 block mb-4">Digital Learning Tools</span>
+            <h1 class="text-4xl md:text-6xl font-bold italic tracking-tighter uppercase leading-none">Платформалар</h1>
+            <p class="mt-8 text-sm opacity-50 uppercase tracking-[0.2em] font-semibold">Мугалим: Аты / Фамилия</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div class="platform-card p-10 reveal flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="text-purple-500 text-3xl opacity-30"><i class="fas fa-gamepad"></i></div>
+                        <span class="text-[9px] font-bold px-3 py-1 bg-purple-500/10 text-purple-500 rounded-full uppercase tracking-widest">Интерактив</span>
+                    </div>
+                    <h3 class="text-2xl font-bold italic mb-4 leading-tight">LearningApps</h3>
+                    <p class="text-sm opacity-60 leading-relaxed mb-10">Окуучулар үчүн интерактивдүү көнүгүүлөр жана оюндар жыйнагы.</p>
+                </div>
+                <a href="https://learningapps.org" target="_blank" class="link-btn">Платформага өтүү</a>
+            </div>
+
+            <div class="platform-card p-10 reveal flex flex-col justify-between" style="transition-delay: 0.1s;">
+                <div>
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="text-purple-500 text-3xl opacity-30"><i class="fas fa-tasks"></i></div>
+                        <span class="text-[9px] font-bold px-3 py-1 bg-purple-500/10 text-purple-500 rounded-full uppercase tracking-widest">Тест</span>
+                    </div>
+                    <h3 class="text-2xl font-bold italic mb-4 leading-tight">Kahoot!</h3>
+                    <p class="text-sm opacity-60 leading-relaxed mb-10">Сабак учурунда өтүлүүчү билимди текшерүү тесттери.</p>
+                </div>
+                <a href="https://kahoot.com" target="_blank" class="link-btn">Платформага өтүү</a>
+            </div>
+
+            <div class="platform-card p-10 reveal flex flex-col justify-between" style="transition-delay: 0.2s;">
+                <div>
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="text-purple-500 text-3xl opacity-30"><i class="fas fa-poll-h"></i></div>
+                        <span class="text-[9px] font-bold px-3 py-1 bg-purple-500/10 text-purple-500 rounded-full uppercase tracking-widest">Формалар</span>
+                    </div>
+                    <h3 class="text-2xl font-bold italic mb-4 leading-tight">Google Forms</h3>
+                    <p class="text-sm opacity-60 leading-relaxed mb-10">Аралыктан сурамжылоо жүргүзүү жана текшерүү иштерин алуу куралы.</p>
+                </div>
+                <a href="https://forms.google.com" target="_blank" class="link-btn">Платформага өтүү</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const themeBtn = document.getElementById('themeBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+        function applyTheme(theme) {
+            if (theme === 'dark') { body.classList.add('dark-mode'); themeIcon.classList.replace('fa-moon', 'fa-sun'); }
+            else { body.classList.remove('dark-mode'); themeIcon.classList.replace('fa-sun', 'fa-moon'); }
+        }
+        applyTheme(localStorage.getItem('portfolio-theme') || 'light');
+        themeBtn.addEventListener('click', () => {
+            const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('portfolio-theme', newTheme); applyTheme(newTheme);
+        });
+        function handleReveal() {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) { el.classList.add('active'); }
+            });
+        }
+        window.onscroll = handleReveal; window.onload = handleReveal;
+    </script>
+</body>
+</html>
