@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мыйзамдар | Аты / Фамилия</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        :root { --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        body { font-family: 'Montserrat', sans-serif; transition: background 0.4s ease, color 0.4s ease; background-color: #ffffff; color: #1a1a1a; }
+        .dark-mode { background-color: #050505 !important; color: #ffffff !important; }
+        
+        .top-badge { background: rgba(0, 0, 0, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 999px; padding: 10px 24px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+        .dark-mode .top-badge { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff !important; }
+        
+        .glass-btn { background: rgba(0, 0, 0, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.1); transition: var(--transition); }
+        .dark-mode .glass-btn { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff !important; }
+        
+        .law-card { background: #ffffff; border-radius: 2.5rem; border: 1px solid #f0f0f0; transition: var(--transition); overflow: hidden; }
+        .dark-mode .law-card { background: #121212 !important; border-color: #252525 !important; }
+        .law-card:hover { transform: translateY(-5px); border-color: #10b981; }
+
+        .official-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #10b981;
+            color: white !important;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: 0.3s;
+        }
+        .official-link:hover { background: #059669; transform: scale(1.05); }
+        
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased">
+    <nav class="fixed top-0 left-0 w-full p-6 z-[100] flex justify-between items-center pointer-events-none">
+        <a href="index.html" class="glass-btn w-12 h-12 rounded-2xl flex items-center justify-center pointer-events-auto hover:scale-110 active:scale-95 transition-all">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <div class="top-badge pointer-events-auto">Санарип Портфолио | <span>Укуктук негиздер</span></div>
+        <button id="themeBtn" class="glass-btn w-12 h-12 rounded-2xl flex items-center justify-center pointer-events-auto hover:scale-110 active:scale-95">
+            <i id="themeIcon" class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <main class="pt-36 pb-20 px-6 max-w-5xl mx-auto">
+        <header class="mb-24 reveal text-center">
+            <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-emerald-500 block mb-4">Official Law Resources</span>
+            <h1 class="text-4xl md:text-7xl font-bold italic tracking-tighter uppercase leading-none dark:text-white">Билим берүү мыйзамдары</h1>
+        </header>
+
+        <div class="space-y-8">
+            <div class="law-card p-10 reveal">
+                <div class="flex items-center gap-6 mb-6">
+                    <div class="w-14 h-14 bg-emerald-500/10 text-emerald-500 rounded-2xl flex items-center justify-center text-2xl">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="text-1xl font-bold italic uppercase dark:text-white">КР Конституциясы</h3>
+                </div>
+                <p class="text-sm opacity-60 leading-relaxed dark:text-gray-300">
+                    Кыргыз Республикасынын негизги мыйзамы. 45-берене ар бир жарандын билим алуу укугун кепилдейт.
+                </p>
+                <a href="http://adilet.zan.kg/kg/archive/link/62000" target="_blank" class="official-link">
+                    <i class="fas fa-external-link-alt"></i> Расмий булак 
+                </a>
+            </div>
+
+            <div class="law-card p-10 reveal" style="transition-delay: 0.1s;">
+                <div class="flex items-center gap-6 mb-6">
+                    <div class="w-14 h-14 bg-blue-500/10 text-blue-500 rounded-2xl flex items-center justify-center text-2xl">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="text-1xl font-bold italic uppercase dark:text-white">«Билим берүү жөнүндө» мыйзам</h3>
+                </div>
+                <p class="text-sm opacity-60 leading-relaxed dark:text-gray-300">
+                    Билим берүү тутумунун иштешин, принциптерин жана түзүмүн аныктаган негизги мыйзам.
+                </p>
+                <a href="http://adilet.zan.kg/kg/archive/link/111326" target="_blank" class="official-link">
+                    <i class="fas fa-external-link-alt"></i> Мыйзамдын тексти
+                </a>
+            </div>
+
+            <div class="law-card p-10 reveal" style="transition-delay: 0.2s;">
+                <div class="flex items-center gap-6 mb-6">
+                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-2xl">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3 class="text-1xl font-bold italic uppercase dark:text-white">Мугалимдин статусу жөнүндө</h3>
+                </div>
+                <p class="text-sm opacity-60 leading-relaxed dark:text-gray-300">
+                    Мугалимдердин укуктарын, милдеттерин жана социалдык кепилдиктерин бекиткен мыйзам.
+                </p>
+                <a href="http://adilet.zan.kg/kg/archive/link/111054" target="_blank" class="official-link">
+                    <i class="fas fa-external-link-alt"></i> Толук маалымат
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const themeBtn = document.getElementById('themeBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+        function applyTheme(theme) {
+            if (theme === 'dark') { body.classList.add('dark-mode'); themeIcon.classList.replace('fa-moon', 'fa-sun'); }
+            else { body.classList.remove('dark-mode'); themeIcon.classList.replace('fa-sun', 'fa-moon'); }
+        }
+        applyTheme(localStorage.getItem('portfolio-theme') || 'dark');
+        themeBtn.addEventListener('click', () => {
+            const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('portfolio-theme', newTheme); applyTheme(newTheme);
+        });
+        function handleReveal() {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('active');
+            });
+        }
+        window.onscroll = handleReveal; window.onload = handleReveal;
+    </script>
+</body>
+</html>
