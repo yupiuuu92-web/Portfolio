@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мыкты мугалим | Жетишкендиктер</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        
+        :root { --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            transition: var(--transition);
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .dark-mode { background-color: #0a0a0a !important; color: #ffffff !important; }
+        
+        .glass-btn {
+            background: rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+        .dark-mode .glass-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode p, .dark-mode span { color: #f3f4f6 !important; }
+        
+        #scrollProgress {
+            position: fixed; top: 0; left: 0; height: 3px; background: #fbbf24;
+            width: 0%; z-index: 1000;
+        }
+
+        .award-card {
+            background: #ffffff;
+            border-radius: 2.5rem;
+            border: 1px solid #f0f0f0;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+        .dark-mode .award-card { background: #111; border-color: #222; }
+        .award-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px -12px rgba(0,0,0,0.1); }
+
+        .medal-icon {
+            color: #fbbf24;
+            filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.3));
+        }
+    </style>
+</head>
+<body>
+
+    <div id="scrollProgress"></div>
+
+    <div class="fixed top-6 left-6 z-[100]">
+        <a href="index.html" class="glass-btn w-12 h-12 rounded-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+    </div>
+
+    <div class="fixed top-6 right-6 z-[100]">
+        <button id="themeBtn" class="glass-btn w-12 h-12 rounded-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+            <i id="themeIcon" class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <main class="py-24 px-6">
+        <div class="max-w-5xl mx-auto">
+            
+            <header class="mb-20 reveal text-center">
+                <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-amber-500">Санарип портфолио</span>
+                <h1 class="text-5xl md:text-7xl font-bold italic tracking-tighter uppercase mt-4">Мыкты мугалим</h1>
+                <p class="mt-6 text-gray-400 max-w-xl mx-auto">Менин кесиптик жолумдагы сыйлыктар, грамоталар жана коомдук иштердеги жетишкендиктерим.</p>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="award-card p-10 reveal">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="medal-icon text-4xl">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <span class="text-[10px] font-bold opacity-30 tracking-widest uppercase">2024</span>
+                    </div>
+                    <h3 class="text-2xl font-bold italic mb-4">тест #1-Мыкты мугалим</h3>
+                    <p class="text-sm opacity-50 leading-relaxed mb-8">
+                        тест #1-Мыкты мугалим. Бул жерге алган дипломуңуз же ардак грамотаңыз жөнүндө маалымат жазылат.
+                    </p>
+                    <div class="pt-6 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                        <span class="text-[9px] uppercase font-bold tracking-widest opacity-40">Райондук деңгээл</span>
+                        <i class="fas fa-check-circle text-amber-500"></i>
+                    </div>
+                </div>
+
+                <div class="award-card p-10 reveal" style="transition-delay: 0.1s;">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="medal-icon text-4xl">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <span class="text-[10px] font-bold opacity-30 tracking-widest uppercase">2023</span>
+                    </div>
+                    <h3 class="text-2xl font-bold italic mb-4">тест #1-Мыкты мугалим</h3>
+                    <p class="text-sm opacity-50 leading-relaxed mb-8">
+                        тест #1-Мыкты мугалим. "Жылдын мыкты мугалими" же ушул сыяктуу сынактардын жеңүүчүсү.
+                    </p>
+                    <div class="pt-6 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                        <span class="text-[9px] uppercase font-bold tracking-widest opacity-40">Облустук деңгээл</span>
+                        <i class="fas fa-star text-amber-500"></i>
+                    </div>
+                </div>
+
+                <div class="award-card p-10 reveal" style="transition-delay: 0.2s;">
+                    <div class="flex justify-between items-start mb-8">
+                        <div class="medal-icon text-4xl">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <span class="text-[10px] font-bold opacity-30 tracking-widest uppercase">2022</span>
+                    </div>
+                    <h3 class="text-2xl font-bold italic mb-4">тест #1-Мыкты мугалим</h3>
+                    <p class="text-sm opacity-50 leading-relaxed mb-8">
+                        тест #1-Мыкты мугалим. Билим берүү тармагына кошкон салымыңыз үчүн берилген сыйлыктар.
+                    </p>
+                    <div class="pt-6 border-t border-gray-100 dark:border-gray-800 flex justify-between items-center">
+                        <span class="text-[9px] uppercase font-bold tracking-widest opacity-40">Республикалык деңгээл</span>
+                        <i class="fas fa-crown text-amber-500"></i>
+                    </div>
+                </div>
+
+                <div class="award-card p-10 reveal border-dashed border-2 flex flex-col items-center justify-center text-center opacity-40" style="transition-delay: 0.3s;">
+                    <div class="w-16 h-16 rounded-full border-2 border-dashed border-current flex items-center justify-center mb-4">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <p class="text-[10px] font-bold uppercase tracking-widest">Жаңы жетишкендиктер кошулат</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Scroll Progress
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        };
+
+        // Theme Toggle
+        const themeBtn = document.getElementById('themeBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                body.classList.add('dark-mode');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                body.classList.remove('dark-mode');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        applyTheme(localStorage.getItem('portfolio-theme') || 'light');
+
+        themeBtn.addEventListener('click', () => {
+            const isDark = body.classList.contains('dark-mode');
+            const newTheme = isDark ? 'light' : 'dark';
+            localStorage.setItem('portfolio-theme', newTheme);
+            applyTheme(newTheme);
+        });
+
+        // Reveal Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+                }
+            });
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.style.opacity = "0";
+            el.style.transform = "translateY(30px)";
+            el.style.transition = "all 0.8s ease-out";
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

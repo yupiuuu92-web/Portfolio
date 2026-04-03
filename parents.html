@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ата-энелер менен иштөө | Аты / Фамилия</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+        :root { --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        body { font-family: 'Montserrat', sans-serif; transition: background 0.4s ease, color 0.4s ease; background-color: #ffffff; color: #1a1a1a; }
+        .dark-mode { background-color: #050505 !important; color: #ffffff !important; }
+        .top-badge { background: rgba(0, 0, 0, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 999px; padding: 10px 24px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+        .dark-mode .top-badge { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff !important; }
+        .glass-btn { background: rgba(0, 0, 0, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.1); transition: var(--transition); }
+        .dark-mode .glass-btn { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff !important; }
+        .dark-mode h1, .dark-mode h3, .dark-mode p, .dark-mode i, .dark-mode span { color: #ffffff !important; }
+        .info-card { background: #ffffff; border-radius: 2.5rem; border: 1px solid #f0f0f0; transition: var(--transition); }
+        .dark-mode .info-card { background: #121212 !important; border-color: #252525 !important; }
+        .info-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px -12px rgba(0,0,0,0.1); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="antialiased">
+    <nav class="fixed top-0 left-0 w-full p-6 z-[100] flex justify-between items-center pointer-events-none">
+        <a href="index.html" class="glass-btn w-12 h-12 rounded-2xl flex items-center justify-center pointer-events-auto hover:scale-110 active:scale-95 transition-all">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+        <div class="top-badge pointer-events-auto">Санарип Портфолио | <span>Ата-энелер</span></div>
+        <button id="themeBtn" class="glass-btn w-12 h-12 rounded-2xl flex items-center justify-center pointer-events-auto hover:scale-110 active:scale-95">
+            <i id="themeIcon" class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <main class="pt-36 pb-20 px-6 max-w-6xl mx-auto">
+        <header class="mb-24 reveal text-center">
+            <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-rose-500 block mb-4">Parental Engagement</span>
+            <h1 class="text-5xl md:text-7xl font-bold italic tracking-tighter uppercase leading-none">Ата-энелер менен иштөө</h1>
+            <p class="mt-8 text-sm opacity-50 uppercase tracking-[0.2em] font-semibold">Мугалим: Аты / Фамилия</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="info-card p-10 reveal">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="text-rose-500 text-3xl opacity-30"><i class="fas fa-comments"></i></div>
+                    <span class="text-[10px] font-bold opacity-30 uppercase tracking-widest text-rose-500">Өткөн чогулуштар</span>
+                </div>
+                <h3 class="text-2xl font-bold italic mb-6">Ата-энелер чогулушу</h3>
+                <p class="text-sm opacity-60 leading-relaxed">
+                    тест #1-Ата-энелер менен иштөө. Чогулуштардын графиги, каралган маселелер жана кабыл алынган чечимдер тууралуу маалымат.
+                </p>
+            </div>
+
+            <div class="info-card p-10 reveal" style="transition-delay: 0.1s;">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="text-rose-500 text-3xl opacity-30"><i class="fas fa-lightbulb"></i></div>
+                    <span class="text-[10px] font-bold opacity-30 uppercase tracking-widest text-rose-500">Кеңештер</span>
+                </div>
+                <h3 class="text-2xl font-bold italic mb-6">Кеңеш берүү (Консультация)</h3>
+                <p class="text-sm opacity-60 leading-relaxed">
+                    тест #2-Ата-энелер менен иштөө. Баланын тарбиясы, окуудагы ийгиликтери жана психологиялык колдоо боюнча берилген кеңештер.
+                </p>
+            </div>
+
+            <div class="info-card p-10 reveal col-md-span-2" style="transition-delay: 0.2s;">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="text-rose-500 text-3xl opacity-30"><i class="fas fa-handshake"></i></div>
+                    <span class="text-[10px] font-bold opacity-30 uppercase tracking-widest text-rose-500">Биргелешкен иш</span>
+                </div>
+                <h3 class="text-2xl font-bold italic mb-6">Биргелешкен иш-чаралар</h3>
+                <p class="text-sm opacity-60 leading-relaxed">
+                    тест #3-Ата-энелер менен иштөө. Ата-энелер жана окуучулар менен биргеликте өткөрүлгөн маданий, спорттук жана социалдык иш-чаралар.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const themeBtn = document.getElementById('themeBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+        function applyTheme(theme) {
+            if (theme === 'dark') { body.classList.add('dark-mode'); themeIcon.classList.replace('fa-moon', 'fa-sun'); }
+            else { body.classList.remove('dark-mode'); themeIcon.classList.replace('fa-sun', 'fa-moon'); }
+        }
+        applyTheme(localStorage.getItem('portfolio-theme') || 'light');
+        themeBtn.addEventListener('click', () => {
+            const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('portfolio-theme', newTheme); applyTheme(newTheme);
+        });
+        function handleReveal() {
+            document.querySelectorAll('.reveal').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) { el.classList.add('active'); }
+            });
+        }
+        window.onscroll = handleReveal; window.onload = handleReveal;
+    </script>
+</body>
+</html>

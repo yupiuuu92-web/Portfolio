@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Эмгек ишмердүүлүгү | Аты</title>
+    <title>Календарлык пландар | Аты</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -14,21 +14,23 @@
         .glass-btn { background: rgba(0, 0, 0, 0.05); backdrop-filter: blur(8px); border: 1px solid rgba(0, 0, 0, 0.1); transition: var(--transition); }
         .dark-mode .glass-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.1); color: white; }
         .dark-mode h1, .dark-mode h3, .dark-mode p, .dark-mode span { color: #f3f4f6 !important; }
-        .dark-mode .text-amber-500 { color: #fbbf24 !important; }
-        .award-card { background: #ffffff; border-radius: 2.5rem; border: 1px solid #f0f0f0; transition: var(--transition); overflow: hidden; position: relative; }
+        .text-blue-500 { color: #3b82f6 !important; }
+        .award-card { background: #ffffff; border-radius: 2.5rem; border: 1px solid #f0f0f0; transition: var(--transition); overflow: hidden; display: flex; flex-col; justify-content: space-between; }
         .dark-mode .award-card { background: #111; border-color: #222; }
         .award-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px -12px rgba(0,0,0,0.1); }
+        .action-btn { width: 100%; py: 3; border-radius: 1rem; border: 1px solid rgba(59, 130, 246, 0.2); text-align: center; font-size: 9px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; color: #3b82f6; transition: all 0.3s; }
+        .award-card:hover .action-btn { background-color: #3b82f6; color: white; border-color: #3b82f6; }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
-<body class="antialiased KG | RU">
+<body class="antialiased">
     <div class="fixed top-6 left-6 z-[100] flex gap-2 pointer-events-none">
         <a href="index.html" class="glass-btn w-12 h-12 rounded-xl flex items-center justify-center pointer-events-auto hover:scale-110 active:scale-95 transition-all">
             <i class="fas fa-arrow-left"></i>
         </a>
         <div class="glass-btn px-4 h-12 rounded-xl flex items-center justify-center pointer-events-auto text-[10px] font-bold uppercase tracking-widest text-gray-400">
-            Санарип Портфолио | <span class="text-black dark:text-white ml-1">Эмгек ишмердүүлүгү</span>
+            Санарип Портфолио | <span class="text-black dark:text-white ml-1">Пландар</span>
         </div>
     </div>
     <div class="fixed top-6 right-6 z-[100]">
@@ -37,27 +39,44 @@
         </button>
     </div>
     <main class="py-32 px-6">
-        <div class="max-w-5xl mx-auto">
+        <div class="max-w-6xl mx-auto">
             <header class="mb-24 reveal text-center active">
-                <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-amber-500">Information</span></span>
-                <h1 class="text-5xl md:text-7xl font-bold italic tracking-tighter uppercase mt-4"></h1> Ишмердүүлүгү</h1>
+                <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-blue-500">Curriculum & Planning</span>
+                <h1 class="text-5xl md:text-7xl font-bold italic tracking-tighter uppercase mt-4">Календарлык пландар</h1>
             </header>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="award-card p-10 reveal">
-                    <div class="flex justify-between items-start mb-8">
-                        <div class="text-amber-500 text-4xl opacity-30"><i class="fas fa-briefcase"></i></div>
-                        <span class="text-[10px] font-bold opacity-30 tracking-widest uppercase">20XX — 20XX</span>
+                    <div>
+                        <div class="flex justify-between items-start mb-8">
+                            <div class="text-blue-500 text-3xl opacity-30"><i class="fas fa-file-invoice"></i></div>
+                            <span class="text-[10px] font-bold opacity-30 tracking-widest uppercase">PDF / DOCX</span>
+                        </div>
+                        <h3 class="text-xl font-bold italic mb-4 leading-tight">тест #1-Календарлык тематикалык пландар</h3>
+                        <p class="text-xs opacity-50 leading-relaxed mb-10">Тест 12 сөз 34.</p>
                     </div>
-                    <h3 class="text-2xl font-bold italic mb-4">тест #1-эмгек ишмердүүлүгү</h3>
-                    <p class="text-sm opacity-50 leading-relaxed mb-8">тест #2-эмгек ишмердүүлүгү. Бул жерге сиздин иштеген жериңиз жана жетишкендиктериньз тууралуу маалымат жазылат.</p>
+                    <a href="#" class="action-btn">Көрүп чыгуу</a>
                 </div>
                 <div class="award-card p-10 reveal" style="transition-delay: 0.1s;">
-                    <div class="flex justify-between items-start mb-8">
-                        <div class="text-amber-500 text-4xl opacity-30"><i class="fas fa-history"></i></div>
-                        <span class="text-[10px] font-bold opacity-30 tracking-widest uppercase">Мурдагы</span>
+                    <div>
+                        <div class="flex justify-between items-start mb-8">
+                            <div class="text-blue-500 text-3xl opacity-30"><i class="fas fa-file-invoice"></i></div>
+                            <span class="text-[10px] font-bold opacity-30 tracking-widest uppercase">PDF / DOCX</span>
+                        </div>
+                        <h3 class="text-xl font-bold italic mb-4 leading-tight">тест #1-Календарлык тематикалык пландар</h3>
+                        <p class="text-xs opacity-50 leading-relaxed mb-10">Физика предмети боюнча 8-класстын окуу планы (2024-2025).</p>
                     </div>
-                    <h3 class="text-2xl font-bold italic mb-4">тест #3-эмгек ишмердүүлүгү</h3>
-                    <p class="text-sm opacity-50 leading-relaxed mb-8">Предыдущий опыт работы или педагогическая практика.</p>
+                    <a href="#" class="action-btn">Көрүп чыгуу</a>
+                </div>
+                <div class="award-card p-10 reveal" style="transition-delay: 0.2s;">
+                    <div>
+                        <div class="flex justify-between items-start mb-8">
+                            <div class="text-blue-500 text-3xl opacity-30"><i class="fas fa-file-invoice"></i></div>
+                            <span class="text-[10px] font-bold opacity-30 tracking-widest uppercase">PDF / DOCX</span>
+                        </div>
+                        <h3 class="text-xl font-bold italic mb-4 leading-tight">тест #1-Календарлык тематикалык пландар</h3>
+                        <p class="text-xs opacity-50 leading-relaxed mb-10">Физика предмети боюнча 9-класстын окуу планы (2024-2025).</p>
+                    </div>
+                    <a href="#" class="action-btn">Көрүп чыгуу</a>
                 </div>
             </div>
         </div>
