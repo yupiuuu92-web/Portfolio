@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сабактардын пландары | Аты / Фамилия</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+        :root { --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            transition: var(--transition);
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .dark-mode {
+            background-color: #0a0a0a !important;
+            color: #ffffff !important;
+        }
+
+        .glass-btn {
+            background: rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .dark-mode .glass-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .dark-mode h1,
+        .dark-mode h3,
+        .dark-mode p,
+        .dark-mode span {
+            color: #f3f4f6 !important;
+        }
+
+        .top-badge {
+            background: rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 999px;
+            padding: 10px 24px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .dark-mode .top-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .plan-card {
+            background: #ffffff;
+            border-radius: 2.5rem;
+            border: 1px solid #f0f0f0;
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .dark-mode .plan-card {
+            background: #111;
+            border-color: #222;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px -12px rgba(0,0,0,0.1);
+        }
+
+        .tag {
+            font-size: 9px;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="fixed top-0 left-0 w-full p-6 z-[100] flex justify-between items-center pointer-events-none">
+        <a href="index.html" class="glass-btn w-12 h-12 rounded-2xl flex items-center justify-center pointer-events-auto hover:scale-110 active:scale-95">
+            <i class="fas fa-arrow-left"></i>
+        </a>
+
+        <div class="top-badge pointer-events-auto">
+            Санарип Портфолио | <span>Сабак пландары</span>
+        </div>
+
+        <button id="themeBtn" class="glass-btn w-12 h-12 rounded-2xl flex items-center justify-center pointer-events-auto hover:scale-110 active:scale-95">
+            <i id="themeIcon" class="fas fa-moon"></i>
+        </button>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="pt-36 pb-20 px-6 max-w-6xl mx-auto">
+
+        <header class="mb-24 reveal text-center">
+            <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-indigo-500 block mb-4">Lesson Planning</span>
+            <h1 class="text-4xl md:text-7xl font-bold italic tracking-tighter uppercase leading-none">
+                Сабактардын пландары
+            </h1>
+            <p class="mt-8 text-sm opacity-50 uppercase tracking-[0.2em] font-semibold">
+                Мугалим: Аты / Фамилия
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            <!-- CARD 1 -->
+            <div class="plan-card p-10 reveal">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="text-indigo-500 text-3xl opacity-30">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <span class="text-[10px] font-bold opacity-30 uppercase tracking-widest">PDF</span>
+                </div>
+
+                <h3 class="text-2xl font-bold italic mb-4">
+                    тест #1-Сабак планы
+                </h3>
+
+                <p class="text-sm opacity-60 leading-relaxed mb-6">
+                    Сабактын максаты, жүрүшү жана колдонулган ыкмалар тууралуу толук маалымат.
+                </p>
+
+                <div class="flex justify-between items-center">
+                    <span class="tag bg-indigo-500/10 text-indigo-500">8-класс</span>
+                    <a href="#" class="text-xs font-bold opacity-60 hover:opacity-100">Ачуу →</a>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="plan-card p-10 reveal" style="transition-delay:0.1s;">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="text-green-500 text-3xl opacity-30">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <span class="text-[10px] font-bold opacity-30 uppercase tracking-widest">DOCX</span>
+                </div>
+
+                <h3 class="text-2xl font-bold italic mb-4">
+                    тест #2-Сабак планы
+                </h3>
+
+                <p class="text-sm opacity-60 leading-relaxed mb-6">
+                    Интерактивдүү сабак өтүү үчүн колдонулган ыкмалар жана мисалдар.
+                </p>
+
+                <div class="flex justify-between items-center">
+                    <span class="tag bg-green-500/10 text-green-500">9-класс</span>
+                    <a href="#" class="text-xs font-bold opacity-60 hover:opacity-100">Ачуу →</a>
+                </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="plan-card p-10 reveal" style="transition-delay:0.2s;">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="text-amber-500 text-3xl opacity-30">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <span class="text-[10px] font-bold opacity-30 uppercase tracking-widest">PDF</span>
+                </div>
+
+                <h3 class="text-2xl font-bold italic mb-4">
+                    тест #3-Сабак планы
+                </h3>
+
+                <p class="text-sm opacity-60 leading-relaxed mb-6">
+                    Жаңы теманы түшүндүрүү жана практикалык иштерди жүргүзүү планы.
+                </p>
+
+                <div class="flex justify-between items-center">
+                    <span class="tag bg-amber-500/10 text-amber-500">10-класс</span>
+                    <a href="#" class="text-xs font-bold opacity-60 hover:opacity-100">Ачуу →</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const themeBtn = document.getElementById('themeBtn');
+        const themeIcon = document.getElementById('themeIcon');
+        const body = document.body;
+
+        function applyTheme(theme) {
+            if (theme === 'dark') {
+                body.classList.add('dark-mode');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                body.classList.remove('dark-mode');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        applyTheme(localStorage.getItem('portfolio-theme') || 'light');
+
+        themeBtn.addEventListener('click', () => {
+            const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem('portfolio-theme', newTheme);
+            applyTheme(newTheme);
+        });
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
