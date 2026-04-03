@@ -1,132 +1,220 @@
 <!DOCTYPE html>
 <html lang="ky">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мыйзамдар | Аты / Фамилия</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
-        :root { --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        body { font-family: 'Montserrat', sans-serif; transition: background 0.4s ease, color 0.4s ease; background-color: #ffffff; color: #1a1a1a; }
-        .dark-mode { background-color: #050505 !important; color: #ffffff !important; }
-        
-        .top-badge { background: rgba(0, 0, 0, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.1); border-radius: 999px; padding: 10px 24px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-        .dark-mode .top-badge { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff !important; }
-        
-        .glass-btn { background: rgba(0, 0, 0, 0.05); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.1); transition: var(--transition); }
-        .dark-mode .glass-btn { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.2); color: #ffffff !important; }
-        
-        .law-card { background: #ffffff; border-radius: 2.5rem; border: 1px solid #f0f0f0; transition: var(--transition); overflow: hidden; }
-        .dark-mode .law-card { background: #121212 !important; border-color: #252525 !important; }
-        .law-card:hover { transform: translateY(-5px); border-color: #10b981; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Билим берүү мыйзамдары | Санарип портфолио</title>
 
-        .official-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #10b981;
-            color: white !important;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: 0.3s;
-        }
-        .official-link:hover { background: #059669; transform: scale(1.05); }
-        
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-    </style>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap');
+
+:root { --transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#ffffff;
+    color:#000;
+    transition:var(--transition);
+}
+
+.dark-mode{
+    background:#0a0a0a !important;
+    color:#fff !important;
+}
+
+.glass-btn{
+    background:rgba(0,0,0,0.05);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(0,0,0,0.1);
+    transition:var(--transition);
+}
+.dark-mode .glass-btn{
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.2);
+}
+
+#themeIcon{ color:#000; }
+.dark-mode #themeIcon{ color:#fff; }
+
+/* HERO */
+.hero{
+    height:50vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:linear-gradient(135deg,#1e293b,#0f172a);
+    color:#fff;
+}
+
+/* CARD */
+.card{
+    background:#fff;
+    border-radius:2.5rem;
+    border:1px solid #eee;
+    transition:var(--transition);
+}
+.dark-mode .card{
+    background:#111;
+    border-color:#222;
+}
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 30px 60px -12px rgba(0,0,0,0.1);
+}
+
+/* REVEAL */
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all 0.8s ease;
+}
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+</style>
 </head>
-<body class="antialiased">
-    <nav class="fixed top-0 left-0 w-full p-6 z-[100] flex justify-between items-center pointer-events-none">
-        <a href="index.html" class="glass-btn w-12 h-12 rounded-2xl flex items-center justify-center pointer-events-auto hover:scale-110 active:scale-95 transition-all">
-            <i class="fas fa-arrow-left"></i>
-        </a>
-        <div class="top-badge pointer-events-auto">Санарип Портфолио | <span>Укуктук негиздер</span></div>
-        <button id="themeBtn" class="glass-btn w-12 h-12 rounded-2xl flex items-center justify-center pointer-events-auto hover:scale-110 active:scale-95">
-            <i id="themeIcon" class="fas fa-moon"></i>
-        </button>
-    </nav>
 
-    <main class="pt-36 pb-20 px-6 max-w-5xl mx-auto">
-        <header class="mb-24 reveal text-center">
-            <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-emerald-500 block mb-4">Official Law Resources</span>
-            <h1 class="text-4xl md:text-7xl font-bold italic tracking-tighter uppercase leading-none dark:text-white">Билим берүү мыйзамдары</h1>
-        </header>
+<body>
 
-        <div class="space-y-8">
-            <div class="law-card p-10 reveal">
-                <div class="flex items-center gap-6 mb-6">
-                    <div class="w-14 h-14 bg-emerald-500/10 text-emerald-500 rounded-2xl flex items-center justify-center text-2xl">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3 class="text-1xl font-bold italic uppercase dark:text-white">КР Конституциясы</h3>
-                </div>
-                <p class="text-sm opacity-60 leading-relaxed dark:text-gray-300">
-                    Кыргыз Республикасынын негизги мыйзамы. 45-берене ар бир жарандын билим алуу укугун кепилдейт.
-                </p>
-                <a href="http://adilet.zan.kg/kg/archive/link/62000" target="_blank" class="official-link">
-                    <i class="fas fa-external-link-alt"></i> Расмий булак 
-                </a>
-            </div>
+<!-- TOP -->
+<div class="fixed top-6 left-6 z-50">
+    <a href="index.html" class="glass-btn w-12 h-12 rounded-xl flex items-center justify-center hover:scale-110">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+</div>
 
-            <div class="law-card p-10 reveal" style="transition-delay: 0.1s;">
-                <div class="flex items-center gap-6 mb-6">
-                    <div class="w-14 h-14 bg-blue-500/10 text-blue-500 rounded-2xl flex items-center justify-center text-2xl">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3 class="text-1xl font-bold italic uppercase dark:text-white">«Билим берүү жөнүндө» мыйзам</h3>
-                </div>
-                <p class="text-sm opacity-60 leading-relaxed dark:text-gray-300">
-                    Билим берүү тутумунун иштешин, принциптерин жана түзүмүн аныктаган негизги мыйзам.
-                </p>
-                <a href="http://adilet.zan.kg/kg/archive/link/111326" target="_blank" class="official-link">
-                    <i class="fas fa-external-link-alt"></i> Мыйзамдын тексти
-                </a>
-            </div>
+<div class="fixed top-6 right-6 z-50">
+    <button id="themeBtn" class="glass-btn w-12 h-12 rounded-xl flex items-center justify-center hover:scale-110">
+        <i id="themeIcon" class="fas fa-moon"></i>
+    </button>
+</div>
 
-            <div class="law-card p-10 reveal" style="transition-delay: 0.2s;">
-                <div class="flex items-center gap-6 mb-6">
-                    <div class="w-14 h-14 bg-amber-500/10 text-amber-500 rounded-2xl flex items-center justify-center text-2xl">
-                        <i class="fas fa-id-card"></i>
-                    </div>
-                    <h3 class="text-1xl font-bold italic uppercase dark:text-white">Мугалимдин статусу жөнүндө</h3>
-                </div>
-                <p class="text-sm opacity-60 leading-relaxed dark:text-gray-300">
-                    Мугалимдердин укуктарын, милдеттерин жана социалдык кепилдиктерин бекиткен мыйзам.
-                </p>
-                <a href="http://adilet.zan.kg/kg/archive/link/111054" target="_blank" class="official-link">
-                    <i class="fas fa-external-link-alt"></i> Толук маалымат
-                </a>
-            </div>
-        </div>
-    </main>
+<!-- HERO -->
+<section class="hero">
+    <h1 class="text-4xl md:text-6xl font-bold italic tracking-tighter">
+        Билим берүү мыйзамдары
+    </h1>
+</section>
 
-    <script>
-        const themeBtn = document.getElementById('themeBtn');
-        const themeIcon = document.getElementById('themeIcon');
-        const body = document.body;
-        function applyTheme(theme) {
-            if (theme === 'dark') { body.classList.add('dark-mode'); themeIcon.classList.replace('fa-moon', 'fa-sun'); }
-            else { body.classList.remove('dark-mode'); themeIcon.classList.replace('fa-sun', 'fa-moon'); }
+<!-- CONTENT -->
+<main class="py-20 px-6 max-w-6xl mx-auto">
+
+<div class="grid md:grid-cols-2 gap-10">
+
+<!-- CARD 1 -->
+<div class="card p-8 reveal">
+    <div class="flex justify-between mb-6">
+        <i class="fas fa-scale-balanced text-3xl text-indigo-500 opacity-40"></i>
+        <span class="text-xs opacity-40">Мыйзам</span>
+    </div>
+
+    <h2 class="text-2xl font-bold italic mb-4">
+        Билим берүү жөнүндө мыйзам
+    </h2>
+
+    <p class="text-sm opacity-70 leading-relaxed">
+        Кыргыз Республикасынын "Билим берүү жөнүндө" мыйзамы билим берүү системасынын негизги принциптерин, 
+        максаттарын жана милдеттерин аныктайт. Бул мыйзам билим берүү мекемелеринин ишмердүүлүгүн жөнгө салат 
+        жана жарандардын билим алууга болгон укугун камсыз кылат.
+    </p>
+</div>
+
+<!-- CARD 2 -->
+<div class="card p-8 reveal" style="transition-delay:.1s;">
+    <div class="flex justify-between mb-6">
+        <i class="fas fa-user-graduate text-3xl text-amber-500 opacity-40"></i>
+        <span class="text-xs opacity-40">Окуучу</span>
+    </div>
+
+    <h2 class="text-2xl font-bold italic mb-4">
+        Окуучулардын укуктары
+    </h2>
+
+    <p class="text-sm opacity-70 leading-relaxed">
+        Окуучулар сапаттуу билим алууга, коопсуз чөйрөдө окууга жана өз мүмкүнчүлүктөрүн толук өнүктүрүүгө укуктуу. 
+        Ошондой эле алар билим берүү процессине активдүү катышууга жана өз оюн эркин билдирүүгө мүмкүнчүлүк алышат.
+    </p>
+</div>
+
+<!-- CARD 3 -->
+<div class="card p-8 reveal" style="transition-delay:.2s;">
+    <div class="flex justify-between mb-6">
+        <i class="fas fa-chalkboard-teacher text-3xl text-green-500 opacity-40"></i>
+        <span class="text-xs opacity-40">Мугалим</span>
+    </div>
+
+    <h2 class="text-2xl font-bold italic mb-4">
+        Мугалимдин милдеттери
+    </h2>
+
+    <p class="text-sm opacity-70 leading-relaxed">
+        Мугалим билим берүүнүн сапатын камсыз кылууга, окуучулардын интеллектуалдык жана моралдык өнүгүүсүнө 
+        шарт түзүүгө милдеттүү. Ал ошондой эле окутуунун заманбап методдорун колдонууга жана үзгүлтүксүз 
+        өзүн-өзү өнүктүрүүгө тийиш.
+    </p>
+</div>
+
+<!-- CARD 4 -->
+<div class="card p-8 reveal" style="transition-delay:.3s;">
+    <div class="flex justify-between mb-6">
+        <i class="fas fa-brain text-3xl text-purple-500 opacity-40"></i>
+        <span class="text-xs opacity-40">Инновация</span>
+    </div>
+
+    <h2 class="text-2xl font-bold italic mb-4">
+        Заманбап билим берүү
+    </h2>
+
+    <p class="text-sm opacity-70 leading-relaxed">
+        Азыркы билим берүү системасы инновацияларга негизделет. Санарип технологиялар, жасалма интеллект 
+        жана интерактивдүү платформалар билим берүүнүн сапатын жогорулатууда маанилүү ролду ойнойт.
+    </p>
+</div>
+
+</div>
+
+</main>
+
+<script>
+const themeBtn = document.getElementById('themeBtn');
+const themeIcon = document.getElementById('themeIcon');
+const body = document.body;
+
+function applyTheme(theme){
+    if(theme === 'dark'){
+        body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        body.classList.remove('dark-mode');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+}
+
+applyTheme(localStorage.getItem('portfolio-theme') || 'light');
+
+themeBtn.addEventListener('click', ()=>{
+    const newTheme = body.classList.contains('dark-mode') ? 'light':'dark';
+    localStorage.setItem('portfolio-theme', newTheme);
+    applyTheme(newTheme);
+});
+
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('active');
         }
-        applyTheme(localStorage.getItem('portfolio-theme') || 'dark');
-        themeBtn.addEventListener('click', () => {
-            const newTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
-            localStorage.setItem('portfolio-theme', newTheme); applyTheme(newTheme);
-        });
-        function handleReveal() {
-            document.querySelectorAll('.reveal').forEach(el => {
-                if (el.getBoundingClientRect().top < window.innerHeight - 50) el.classList.add('active');
-            });
-        }
-        window.onscroll = handleReveal; window.onload = handleReveal;
-    </script>
+    });
+});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
 </body>
 </html>
